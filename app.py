@@ -11,12 +11,6 @@ st.title("📊 거래처 거래내역 및 미수금 현황")
 @st.cache_data
 def load_data():
     # 실제 연동 시: df = pd.read_csv("https://docs.google.com/spreadsheets/d/1YD0AolMY-Ed6vNogf3L04OuaLV3RFLbJxHEd56UISzE/edit?gid=621616384#gid=621616384")
-    data = {
-        '업체명': ['인터페이스', '의료법인삼광의료재단', '(주)삼구아이앤씨'],
-        '잔고': [1500000000, 1304689660, 1000000000],
-        '기준 회전일': ['즉시', '90일', '즉시'],
-        '회전일 초과 금액': [1500000000, 1132033410, 1000000000]
-    }
     return pd.DataFrame(data)
 
 df = load_data()
@@ -37,3 +31,4 @@ target_client = st.sidebar.selectbox("조회할 업체를 선택하세요", df['
 client_info = df[df['업체명'] == target_client]
 
 st.write(f"### {target_client} 상세 정보", client_info)
+
