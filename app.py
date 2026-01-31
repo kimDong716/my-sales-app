@@ -46,8 +46,8 @@ df_history = load_data("0")
 # --- 스타일 함수 ---
 def style_dataframe(df):
     def get_bg_color(col_index):
-        if 0 <= col_index <= 4: return 'background-color: #FFEBEE' # 파스텔 빨강 (A-E)
-        if 5 <= col_index <= 7: return 'background-color: #FFFDE7' # 파스텔 노랑 (F-H)
+        if 0 <= col_index <= 3: return 'background-color: #FFEBEE' # 파스텔 빨강 (A-E)
+        if 4 <= col_index <= 6: return 'background-color: #FFFDE7' # 파스텔 노랑 (F-H)
         return 'background-color: #E3F2FD' # 파스텔 파랑 (I~ )
 
     # 숫자 포맷 지정 (천 단위 콤마)
