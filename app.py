@@ -10,7 +10,7 @@ st.title("📊 거래처 거래내역 및 미수금 현황")
 # 여기서는 예시를 위해 시트 구조를 바탕으로 데이터를 생성합니다.
 @st.cache_data
 def load_data():
-    # 실제 연동 시: df = pd.read_csv("your_google_sheet_url")
+    # 실제 연동 시: df = pd.read_csv("https://docs.google.com/spreadsheets/d/1YD0AolMY-Ed6vNogf3L04OuaLV3RFLbJxHEd56UISzE/edit?gid=621616384#gid=621616384")
     data = {
         '업체명': ['인터페이스', '의료법인삼광의료재단', '(주)삼구아이앤씨'],
         '잔고': [1500000000, 1304689660, 1000000000],
@@ -35,4 +35,5 @@ st.dataframe(df, use_container_width=True)
 st.sidebar.header("필터링")
 target_client = st.sidebar.selectbox("조회할 업체를 선택하세요", df['업체명'].unique())
 client_info = df[df['업체명'] == target_client]
+
 st.write(f"### {target_client} 상세 정보", client_info)
